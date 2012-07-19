@@ -1,0 +1,15 @@
+{
+    "name": "khepin/medusa",
+    "description": "A small set of command to maintain a mirror of git repositories and create a local satis repository for composer.",
+    "require": {
+        "composer/satis": "dev-master",
+        "guzzle/guzzle": "v2.8.1"
+    },
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Sebastien Armand",
+            "email": "khepin@gmail.com"
+        }
+    ]
+}
