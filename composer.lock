@@ -1,0 +1,73 @@
+{
+    "hash": "ef9412f2d443d8ee00b68a2681707e63",
+    "packages": [
+        {
+            "package": "composer/composer",
+            "version": "dev-master",
+            "alias-pretty-version": "1.0.x-dev",
+            "alias-version": "1.0.9999999.9999999-dev"
+        },
+        {
+            "package": "composer/composer",
+            "version": "dev-master",
+            "source-reference": "f2934ce58f417d3950f924c91c27486b1308326f",
+            "commit-date": "1342703198"
+        },
+        {
+            "package": "composer/satis",
+            "version": "dev-master",
+            "source-reference": "d3670b4b8ea1092eddc7a5eee24c9b6f3b649d94",
+            "commit-date": "1341391796"
+        },
+        {
+            "package": "doctrine/common",
+            "version": "2.3.x-dev",
+            "source-reference": "15b04ec520ccded3dc0eba65b12a69ff1931360f",
+            "commit-date": "1342443556"
+        },
+        {
+            "package": "guzzle/guzzle",
+            "version": "v2.8.1"
+        },
+        {
+            "package": "justinrainbow/json-schema",
+            "version": "1.1.0"
+        },
+        {
+            "package": "seld/jsonlint",
+            "version": "1.0.0"
+        },
+        {
+            "package": "symfony/symfony",
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/symfony",
+            "version": "dev-master",
+            "source-reference": "ec5fee0cbb7d2fcc000cede2cf6f0bf2b926599c",
+            "commit-date": "1342615541"
+        },
+        {
+            "package": "twig/twig",
+            "version": "dev-master",
+            "alias-pretty-version": "1.9.x-dev",
+            "alias-version": "1.9.9999999.9999999-dev"
+        },
+        {
+            "package": "twig/twig",
+            "version": "dev-master",
+            "source-reference": "d70860f5f5263ec8aa7d8f81729ff79793985a6b",
+            "commit-date": "1342598009"
+        }
+    ],
+    "packages-dev": null,
+    "aliases": [
+
+    ],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "composer/satis": 20
+    }
+}

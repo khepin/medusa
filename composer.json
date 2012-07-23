@@ -11,5 +11,8 @@
             "name": "Sebastien Armand",
             "email": "khepin@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-0": {"Khepin": "src"}
+    }
 }

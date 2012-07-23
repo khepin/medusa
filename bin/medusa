@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+namespace Khepin\Medusa\Console;
+
+include __DIR__.'/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use Khepin\Medusa\Command\AddRepoCommand;
+use Khepin\Medusa\Command\ResolveDependenciesCommand;
+
+$application = new Application();
+$application->add(new AddRepoCommand);
+$application->add(new ResolveDependenciesCommand);
+$application->run();
