@@ -43,6 +43,7 @@ class MirrorCommand extends Command
             $repos = array_merge($repos, $deps);
         }
 
+        $output->writeln('<info>Create mirror repositories</info>');
         foreach($repos as $repo){
             $command = $this->getApplication()->find('add');
 

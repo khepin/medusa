@@ -63,6 +63,14 @@ class Compiler
             ->in(__DIR__.'/../../../vendor/guzzle')
         ;
         $finders[] = $finder;
+
+        $finder = new Finder();
+        $finder->files()
+            ->ignoreVCS(true)
+            ->name('*.php')
+            ->in(__DIR__.'/../../../vendor/composer/composer/src/Composer/Json')
+        ;
+        $finders[] = $finder;
         
         foreach ($finders as $finder) {
             foreach ($finder as $file) {

@@ -1,0 +1,7 @@
+{
+    "require": [
+        "guzzle/guzzle"
+    ],
+    "repodir": "repos",
+    "satisconfig": "config.json"
+}

@@ -63,7 +63,7 @@ EOT
             if($input->getOption('config-file')){
                 $file = new JsonFile($input->getOption('config-file'));
                 $config = $file->read();
-                $url = realpath($dir.'/'.str_replace('/', '-', $package).'.git');
+                $url = realpath($dir.'/'.$package.'.git');
                 $repo = array('type' => 'git', 'url' => 'file:///'.$url);
                 $config['repositories'][] = $repo;
                 $file->write($config);
