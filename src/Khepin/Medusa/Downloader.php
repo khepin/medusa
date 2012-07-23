@@ -18,7 +18,7 @@ class Downloader
     public function download($in_dir)
     {
         $cmd = 'git clone --mirror %s %s';
-        $dir = $in_dir.'/'.str_replace('/', '-', $this->package).'.git';
+        $dir = $in_dir.'/'.$this->package.'.git';
         if(is_dir($dir)){
             return;
         }

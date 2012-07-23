@@ -6,9 +6,11 @@ include __DIR__.'/../vendor/autoload.php';
 
 use Symfony\Component\Console\Application;
 use Khepin\Medusa\Command\AddRepoCommand;
-use Khepin\Medusa\Command\ResolveDependenciesCommand;
+use Khepin\Medusa\Command\UpdateReposCommand;
+use Khepin\Medusa\Command\MirrorCommand;
 
 $application = new Application();
 $application->add(new AddRepoCommand);
-$application->add(new ResolveDependenciesCommand);
+$application->add(new UpdateReposCommand);
+$application->add(new MirrorCommand);
 $application->run();

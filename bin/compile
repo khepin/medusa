@@ -1,0 +1,9 @@
+#!/usr/bin/env php
+<?php
+
+include __DIR__.'/../vendor/autoload.php';
+
+use Khepin\Medusa\Compiler;
+
+$compiler = new Compiler();
+$compiler->compile();

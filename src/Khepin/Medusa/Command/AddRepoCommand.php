@@ -9,6 +9,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Process\Process;
 use Guzzle\Service\Client;
 use Composer\Json\JsonFile;
+use Khepin\Medusa\DependencyResolver;
 
 class AddRepoCommand extends Command
 {
@@ -29,6 +30,7 @@ class AddRepoCommand extends Command
                 new InputArgument('package', InputArgument::REQUIRED, 'The name of a composer package', null),
                 new InputArgument('repos-dir', InputArgument::OPTIONAL, 'Location where to output built files', null),
                 new InputOption('config-file', null, InputOption::VALUE_NONE, 'The config file to update with the new info'),
+                new InputOption('with-deps', null, InputOption::VALUE_NONE, 'If set, the package dependencies will be downloaded too'),
             ))
             ->setHelp(<<<EOT
 The <info>mirror</info> command reads the given composer.lock file and mirrors
@@ -48,17 +50,24 @@ EOT
         $dir = $input->getArgument('repos-dir');
         $package = $input->getArgument('package');
 
-        $output->writeln(' - Fetching <info>'.$package.'</info>');
-        $this->getGitRepo($package, $dir);
-        $output->writeln('');
+        $deps = [$package];
+        if($input->getOption('with-deps')){
+            $resolver = new DependencyResolver($package);
+            $deps = $resolver->resolve();
+        }
+        foreach($deps as $package){
+            $output->writeln(' - Mirroring <info>'.$package.'</info>');
+            $this->getGitRepo($package, $dir);
+            $output->writeln('');
 
-        if($input->getOption('config-file')){
-            $file = new JsonFile($input->getOption('config-file'));
-            $config = $file->read();
-            $url = realpath($dir.'/'.str_replace('/', '-', $package).'.git');
-            $repo = array('type' => 'git', 'url' => 'file:///'.$url);
-            $config['repositories'][] = $repo;
-            $file->write($config);
+            if($input->getOption('config-file')){
+                $file = new JsonFile($input->getOption('config-file'));
+                $config = $file->read();
+                $url = realpath($dir.'/'.str_replace('/', '-', $package).'.git');
+                $repo = array('type' => 'git', 'url' => 'file:///'.$url);
+                $config['repositories'][] = $repo;
+                $file->write($config);
+            }
         }
     }
 
