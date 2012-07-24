@@ -73,6 +73,11 @@ EOT
 
     protected function getGitRepo($package, $outputDir)
     {
+        $dir = $in_dir.'/'.$this->package.'.git';
+        if(is_dir($dir)){
+            $output->writeln('  <warning>The repo already exists. Try updating it instead.</warning>');
+            return;
+        }
         $response = $this->guzzle->get('/packages/'.$package.'.json')->send();
         $response = $response->getBody(true);
         $package = json_decode($response);
