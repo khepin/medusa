@@ -1,5 +1,5 @@
 {
-    "hash": "ef9412f2d443d8ee00b68a2681707e63",
+    "hash": "3f5f3215ace9028f7637512b5117d2b6",
     "packages": [
         {
             "package": "composer/composer",
@@ -10,8 +10,8 @@
         {
             "package": "composer/composer",
             "version": "dev-master",
-            "source-reference": "f2934ce58f417d3950f924c91c27486b1308326f",
-            "commit-date": "1342703198"
+            "source-reference": "ac29308eb764a2c85d9253ed426227ed902ff769",
+            "commit-date": "1343056624"
         },
         {
             "package": "composer/satis",
@@ -46,8 +46,8 @@
         {
             "package": "symfony/symfony",
             "version": "dev-master",
-            "source-reference": "ec5fee0cbb7d2fcc000cede2cf6f0bf2b926599c",
-            "commit-date": "1342615541"
+            "source-reference": "2aaa4ed84e56ad8e3420e696f6a42231d30bc1d2",
+            "commit-date": "1343064472"
         },
         {
             "package": "twig/twig",
@@ -58,8 +58,8 @@
         {
             "package": "twig/twig",
             "version": "dev-master",
-            "source-reference": "d70860f5f5263ec8aa7d8f81729ff79793985a6b",
-            "commit-date": "1342598009"
+            "source-reference": "657de7bdeb680815e0df95f63da9f81e1533d2ea",
+            "commit-date": "1342953178"
         }
     ],
     "packages-dev": null,

@@ -73,7 +73,7 @@ EOT
 
     protected function getGitRepo($package, $outputDir)
     {
-        $dir = $in_dir.'/'.$this->package.'.git';
+        $dir = $in_dir.'/'.$package.'.git';
         if(is_dir($dir)){
             $output->writeln('  <warning>The repo already exists. Try updating it instead.</warning>');
             return;
