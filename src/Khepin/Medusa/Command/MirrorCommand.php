@@ -42,6 +42,7 @@ class MirrorCommand extends Command
             $deps = $resolver->resolve();
             $repos = array_merge($repos, $deps);
         }
+        $repos = array_unique($repos);
 
         $output->writeln('<info>Create mirror repositories</info>');
         foreach($repos as $repo){
