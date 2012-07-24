@@ -50,6 +50,8 @@ EOT
         $dir = $input->getArgument('repos-dir');
         $package = $input->getArgument('package');
 
+        $this->output = $output;
+
         $deps = [$package];
         if($input->getOption('with-deps')){
             $resolver = new DependencyResolver($package);
@@ -73,9 +75,9 @@ EOT
 
     protected function getGitRepo($package, $outputDir)
     {
-        $dir = $in_dir.'/'.$package.'.git';
+        $dir = $outputDir.'/'.$package.'.git';
         if(is_dir($dir)){
-            $output->writeln('  <warning>The repo already exists. Try updating it instead.</warning>');
+            $this->output->writeln('  <comment>The repo already exists. Try updating it instead.</comment>');
             return;
         }
         $response = $this->guzzle->get('/packages/'.$package.'.json')->send();
